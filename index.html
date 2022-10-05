@@ -3,31 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta  name="description" content="This can show up sometimes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="js/game-manager.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
 </head>
 <body>
-    <nav class="nav-main">
-        <div class="btn-toggle-nav"></div>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Creer une video</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Quitter</a></li>
-        </ul>
-    </nav>
+    <div class="header">
+        <p>PLAY GAME</p>
+        <h1>CHOOSE YOUR CHARACTER</h1>
+    </div>
 
-    <aside class="nav-sidebar">
-        <ul>
-            <li><span>jerkgergk</span></li>
-            <li><span>jerkgergk</span></li>
-            <li><span>jerkgergk</span></li>
-            <li><span>jerkgergk</span></li>
-            <li><span>jerkgergk</span></li>
-        </ul>
-    </aside>
+    <div class="interface">
+        <a href="#" onclick="">
+            <img src="images/player/linux.jfif" alt="player">
+            <div>
+                <h2>Linux</h2>
+                <p>Encaisse facilement, mais lent des ses mouvements. Duree de vie moyenne et puissance elevee</p>
+            </div>
+        </a>
+        <a href="#" onclick="">
+            <img src="images/player/bart.png" alt="player">
+            <div>
+                <h2>Bart</h2>
+                <p>Mouvements tres rapides mais faibles. Duree de vie tres faible. Esquive tres bien.</p>
+            </div>
+        </a>
+        <a href="#" onclick="">
+            <img src="images/player/bob.png" alt="player">
+            <div>
+                <h2>Bob</h2>
+                <p>Encaisse tres bien, mouvements moyens. Duree de vie moyenne et esquive moyenne. Avantage complet sous l'eau</p>
+            </div>
+        </a>
+        <a href="#" onclick="">
+            <img src="images/player/mickey.png" alt="player">
+            <div>
+                <h2>Mickey</h2>
+                <p>Encaisse difficilement, mouvements rapides. Duree de vie elevee et puissance moyenne</p>
+            </div>
+        </a>
+    </div>
+
+    <div class="actions">
+
+    </div>
+
+    <div class="arena">
+        
+    </div>
+
+    <div class="enemy">
+         
+    </div>
 </body>
-<script src="main.js"></script>
 </html>
