@@ -1,3 +1,4 @@
+//Creation d'un objet
 let person = {
     name: 'Jovi',
     age: 13,
@@ -8,4 +9,17 @@ let person = {
 }
 
 console.log(person.infos())
+
+//Creation d'un objet grace a une fonction
+function human(name, weight, gender) {
+    this.name = name;
+    this.weight = weight;
+    this.gender = gender;
+    this.infos = function(){
+        return 'I\'m ' + this.gender + ' ' + this.name
+    }
+}
+
+console.log(new human("Jean", 14, 'M').infos());
+
 
