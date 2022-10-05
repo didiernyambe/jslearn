@@ -1,6 +1,5 @@
 let player;
 
-
 function Player(classType, health, shield, strength, agility, speed) {
     this.classType = classType;
     this.health = health;
