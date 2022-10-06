@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(193, 176, 188);
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    width: 160px;
+    height: 25vh;
+}
+
+.arena{
+    background: url('images/arena.png');
+    visibility: hidden;
+    background-position: center;
+    background-size: contain;
+    height: 100px;
+    width: 50vw;
+}
+
+.interface a{
+    text-decoration: none;
+    display:inline-flex;
+    color: black;
+    height: 25vh;
+    width: 30vw;
+    min-width: 300px;
+    margin-bottom: 10px;
+    gap: 10px;
+    border: rgba(16, 25, 46, 0.752) inset 1px;
+}
+
+.interface a:hover{
+    background-color: rgb(250, 239, 234);
+}
+
+.header{
+    text-transform: capitalize;
+    background-color: #121;
+    color: #cdcdcd;
+    width: 50vw;
+}
+
+.actions{
+    background-color: rgb(222, 91, 47);
+    text-transform: capitalize;
+    visibility: hidden;
+    width: 50vw;
+    height: 50px;
+    text-align: center;
+}
+
+.actions a{
+    text-decoration: underline;
+    color: whitesmoke;
+    font-size: 1.3em;
+}
