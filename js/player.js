@@ -1,4 +1,4 @@
-let player;
+let player, i = 0;
 
 function Player(classType, health, shield, strength, agility, speed) {
     this.classType = classType;
