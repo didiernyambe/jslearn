@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  background-color: rgb(31, 31, 31);
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px black;
+  background-color: white;
+}
+    /* body{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        background: #232323;
+        color: #efefef;
+        overflow: hidden;
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+        transform: scale(2);
+    }
+    label + input{
+        border: 2px solid red;
+    }
+    .button-container{
+        background-color: darkred;
+        height: 40vh;
+        width: 40vw;
+        padding: 10px 0;
+    }
+    .button-container > input{
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 1.5rem;
+        width: 10rem;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1px 1px 5px black;
+        background-color: white;
+    }
+    @keyframes goRight {
+        from{ left: 0; }
+        to{ left: 33%; }
+    }
+    @keyframes goLeft {
+        from{ left: 0; }
+        to{ left: -33%; }
+    } */
+</style>
+<body>
+    <!-- <div class="container">
+        <form action="next.html">
+            <label for="num">Enter a 3 digits Number :</label>
+            <input type="text" oninput="func()">
+            <div class="button-container">
+                <input type="submit" value="Submit" onmouseover="test()">
+            </div>
+            
+        </form>
+    </div> -->
+    <button id='runaway-btn'>Click Me &#129315;</button>
+</body>
+
+
+<script>
+    //let btn = document.querySelector(".button-container > input");
+    const btn = document.querySelector("#runaway-btn");
+    let inputText = document.querySelector("label + input");
+    let buttonContainer = document.querySelector(".button-container")
+
+    // function func() {
+    //     if (inputText.value.length === 3) {
+    //         buttonContainer.remove;
+    //         inputText.style.border = "2px solid green";
+    //         document.body.style.background = "#0d4111";
+    //         console.log('yep');
+    //         if (!isNaN(inputText.value)) {
+    //             btn.style.display = "inline-block";
+    //         }
+            
+    //     } else {
+    //         console.log('NOPE');
+    //         inputText.style.border = "2px solid red";
+    //         document.body.style.background = "#721010";
+    //         // btn.style.display = "none";
+    //     }
+    // }
+    
+    // let test = () => {
+    //     let valeur = inputText.value;
+    //     if(valeur.length === 3 && !isNaN(valeur)){
+    //         console.log('YUPI');
+    //         btn.style.cursor = "pointer";
+            
+    //     }else{
+    //         btn.style.cursor = "not-allowed";
+            
+    //     }
+    // }
+
+
+    const animateMove = (element, prop, pixels) =>
+    anime({
+        targets: element,
+        [prop]: `${pixels}px`,
+        easing: "easeOutCirc"
+    });
+
+    ["mouseover", "click"].forEach(function (el) {
+        btn.addEventListener(el, function (event) {
+            const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+            const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+            animateMove(this, "left", left).play();
+            animateMove(this, "top", top).play();
+        });
+    });
+
+    const getRandomNumber = (num) => {
+        return Math.floor(Math.random() * (num + 1));
+    };
+</script>
+
+</html>

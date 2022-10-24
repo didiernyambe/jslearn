@@ -27,6 +27,7 @@ let gameManager = {
         console.log(player);
 
         let getInterface = document.querySelector(".interface");
+
         let extension = (classType === 'Linux' | classType === 'cj' | classType === 'Mario' | classType === 'Trevor') ? '.jfif' : '.png';
         getInterface.innerHTML = "<img src='images/player/" + classType.toLowerCase() + extension + "' alt=''/><div><h2>" + classType + "</h2><p> Health: " + player.health + "<br> Shield: " + player.shield + " <br> Strength: " + player.strength + "<br> Agility: " + player.agility + "<br> Speed: " + player.speed + "</p></div>"; 
     },
@@ -35,15 +36,18 @@ let gameManager = {
         let getActions = document.querySelector(".actions");
         let getArena = document.querySelector(".arena");
 
-        getHeader.innerHTML= '<h1>Tache : Trouver un adversaire</h1>';
+
+        getHeader.innerHTML= '<p>Tache : Trouver un adversaire</p>';
         getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="gameManager.setFight()">Rechercher un ennemi!</a>';
 
-        getArena.style.visibility, getActions.style.visibility = "visible";
+        getArena.style.visibility = "visible";
+
     },
     setFight(){
         let getHeader = document.querySelector(".header");
         let getActions = document.querySelector(".actions");
         let getEnemy = document.querySelector(".enemy");
+
         //Choose Enemy
         let enemies = [
             new Enemy("sonic", 220, 170, 100, 480, 480),
@@ -66,5 +70,6 @@ let gameManager = {
         console.log(enemy);
 
         getEnemy.innerHTML = "<img src='images/enemy/" + enemy.enemyType + ".jfif' alt='enemy'/><div><h2>" + enemy.enemyType + "</h2><p> Health: " + enemy.health + "<br> Shield: " + enemy.shield + " <br> Strength: " + enemy.strength + "<br> Agility: " + enemy.agility + "<br> Speed: " + enemy.speed + "</p></div>";
+
     }
 }
