@@ -22,9 +22,24 @@ let gameManager = {
 
         let getInterface = document.querySelector(".interface");
         let extension = (classType === 'Linux') ? '.jfif' : '.png';
-        getInterface.innerHTML = "<img src='images/player/'" + classType.toLowerCase + extension + " alt=''/><div><h2>" + classType + "</h2><p> Health: " + player.health + "<br> Shield: " + player.shield + " <br> Strength: " + player.strength + "</p></div>"; // J en suis a la video 24 21:35 minutes.
+        getInterface.innerHTML = "<img src='images/player/" + classType.toLowerCase() + extension + "' alt=''/><div><h2>" + classType + "</h2><p> Health: " + player.health + "<br> Shield: " + player.shield + " <br> Strength: " + player.strength + "<br> Agility: " + player.agility + "<br> Speed: " + player.speed + "</p></div>"; 
     },
     setPreFight : function () {
-        console.log("Prefight set");
+        let getHeader = document.querySelector(".header");
+        let getActions = document.querySelector(".actions");
+        let getArena = document.querySelector(".arena");
+
+        getHeader.innerHTML= '<p>Tache : Trouver un adversaire</p>';
+        getActions.innerHTML = '<a href="#" class="btn-prefight" onclick="gameManager.setFight()">Rechercher un ennemi!</a>';
+
+        getArena.style.visibility = "visible";
+    },
+    setFight(){
+        let getHeader = document.querySelector(".header");
+        let getActions = document.querySelector(".actions");
+        let getEnemy = document.querySelector(".enemy");
+        //Create Enemy
+        let enemy00 = new Enemy("sonic", 220, 170, 100, 480, 480);
+        let enemy01 = new Enemy("snoopy", 375, 250, 250, 200, 200);
     }
 }

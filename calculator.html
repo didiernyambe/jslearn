@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #222;
+        color: #eee;
+    }
+    input[type="button"]{
+        width: 70px;
+    }
+    .container{
+        background-color: #eee;
+        color: #222;
+        width: 35vw;
+        height: 80vh;
+        transform: translate(80%, 10%);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .display{
+        background-color: #222;
+    }
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        background-color: blue;   
+    }
+    .operators{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .others{
+        display: flex;
+    }
+    .numbers{
+        display: flex;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="display">
+            <input type="text"  value="erer" disabled>
+            <input type="text">
+        </div>
+        <div class="buttons">
+            <div class="operators">
+                <input type="button" value="btn">
+                <input type="button" value="btn">
+                <input type="button" value="btn">
+                <input type="button" value="btn">
+            </div>
+
+            <div class="others">
+
+                <div class="numbers">
+                    <input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn"><input type="button" value="btn">
+                </div>
+                
+                <div class="equal">
+                    <input type="button" value="btn">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+<script>
+    console.log(document.querySelector(".display>input").value);
+</script>
+</html>

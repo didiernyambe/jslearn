@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(id,capacity, colour) {
+            this.id = id;
+            this.capacity = capacity;
+            this.colour = colour;
+        }
+
+
+        var listOfCars = [], i = 0;
+        alert(listOfCars.length);
+        alert('Creation de modeles de voiture');
+        while(prompt('Creer une nouvelle voiture?')){
+            let id = i++;
+            let capacity = parseInt(prompt("Entrez sa capacité "));
+            let colour = prompt("Entrez sa couleur ");
+            listOfCars.push(new Car(id, capacity, colour));
+            //console.log(listOfCars);
+        }
+
+        //Creation de noeuds
+        var body = document.querySelector("body");
+        for (let index = 0; index < listOfCars.length; index++) {
+            const LOCelement = listOfCars[index];
+            let newList = document.createElement("ul");
+            for (const key in LOCelement) {
+                let newTitle = document.createElement("h1");
+                if (key === 'id') {
+                    let newTitleContent = document.createTextNode("Voiture " + LOCelement[key]);
+                    newTitle.appendChild(newTitleContent);
+                    console.log(newTitle);
+                    body.appendChild(newTitle);
+                } else {
+                    let newListItem = document.createElement("li");
+                    let newListItemContent = document.createTextNode(key + " : " + LOCelement[key]);
+                    newListItem.appendChild(newListItemContent);
+                    newList.appendChild(newListItem);
+                }
+            }
+            console.log(newList);
+            body.appendChild(newList);
+        }
+       
+        
+    </script>
+</body>
+</html>
