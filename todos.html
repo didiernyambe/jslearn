@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO List</title>
+</head>
+
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #aaaaaa8c;
+    }
+    .container{
+        margin-top: 5em;
+        background-color: white;
+        width: 80%;
+        border-radius: .7em;
+        padding: 1em ;
+    }
+    h1, h2{
+        text-align: center;
+    }
+    li{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2px;
+        grid-auto-rows: minmax(10px, auto);
+        padding: .5em 0;
+    }
+    li button{
+        cursor: pointer;
+        width: 50%;
+    }
+    li label{
+        margin-left: 55%;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>T O D O - L I S T </h1>
+        <h2><button onclick="addOne()">ADD A TASK</button> <button onclick="deleteAll()" onmouseover="checkList()">DELETE ALL</button></h2>
+        <div class="list">
+            <ul>
+                <li> <label for="">Faire lee lit</label> <button>Delete</button> </li>
+                <li> <label for="">Cuisine</label> <button>Delete</button> </li>
+                <li> <label for="">Lessive</label> <button>Delete</button> </li>
+                <li> <label for="">Sieste</label> <button>Delete</button> </li>
+            </ul>
+            
+        </div>
+    </div>
+</body>
+
+
+<script>
+
+    const taskList = document.querySelector("ul");
+    const tasks = taskList.childNodes;
+
+    function checkList(){
+        if (!taskList || taskList.childNodes.length < 1)
+        alert('There is nothing to delete') 
+    }
+
+    function deleteAll() {
+        console.log(taskList);
+        if (!taskList || taskList.childNodes.length < 1)
+            alert('There is nothing to delete')
+        else {
+            while(taskList.firstChild){
+                taskList.removeChild(taskList.firstChild);
+            }
+        }
+    }
+
+    function addOne() {
+        console.log(taskList);
+        console.log(taskList.childNodes[0]);
+        if (taskList !== 'null' && taskList.childNodes.length > 0)
+            console.log(`create your task N ${parseInt(taskList.childNodes.length) + 1} :`)
+    }
+    
+</script>
+
+
+</html>
